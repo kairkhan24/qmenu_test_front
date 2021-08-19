@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
+import RestaurantList from "./components/RestaurantList/RestaurantList";
+import RestaurantDetail from "./components/RestaurantDetail/RestaurantDetail";
+import RestaurantAdd from "./components/RestaurantAdd/RestaurantAdd";
+import RestaurantEdit from "./components/RestaurantEdit/RestaurantEdit";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <Router>
+            <div className="wrapper">
+                <Sidebar/>
+                <div className="content">
+                    <Route exact path="/" component={RestaurantList}/>
+                    <Route path="/restaurant/:restaurantId" component={RestaurantDetail}/>
+                    <Route path="/restaurant-add" component={RestaurantAdd} />
+                    <Route path="/restaurant-edit/:restaurantId" component={RestaurantEdit}/>
+                </div>
+            </div>
+        </Router>
+    )
 }
 
-export default App;
+export default App

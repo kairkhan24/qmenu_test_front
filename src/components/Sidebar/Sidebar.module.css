@@ -1,0 +1,19 @@
+.sidebar {
+    padding: 50px;
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.navLink {
+    margin-bottom: 15px;
+}
+
+.navLink a {
+    text-decoration: none;
+    font-size: 25px;
+    color:black;
+}
+
+.navLink a.active {
+    color: darkgoldenrod;
+}

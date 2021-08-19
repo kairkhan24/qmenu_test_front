@@ -1,0 +1,22 @@
+.restaurant {
+    display: grid;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 10px;
+    height: 250px;
+}
+
+.restaurantImage img {
+    width: 200px;
+}
+
+.detailBtn {
+    margin-top: 10px;
+}
+.detailBtn a {
+    border: 1px solid black;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}

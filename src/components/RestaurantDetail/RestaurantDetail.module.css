@@ -1,0 +1,20 @@
+.restaurantImage img {
+    width: 500px;
+}
+
+.updateButton {
+    margin-bottom: 50px;
+}
+.deleteButton button {
+    color: black;
+    text-decoration: none;
+    background-color:firebrick;
+    padding: 15px;
+}
+
+.updateButton a {
+    color: black;
+    text-decoration: none;
+    background-color: green;
+    padding: 15px;
+}

@@ -1,0 +1,13 @@
+.restaurantInfo {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    padding: 30px;
+}
+
+.key {
+    margin-top: 20px;
+}
+
+.value {
+    margin-top: 20px;
+}
