@@ -1,3 +1,5 @@
+import {getFromLocalStorage, likeInLocalStorage} from "./localStorage";
+
 import {
     createRestaurantSuccess,
     createRestaurantError,
@@ -5,7 +7,9 @@ import {
     setSingleRestaurant,
     editRestaurantSuccess,
     editRestaurantError,
-    destroyRestaurant
+    destroyRestaurant,
+    getLikedRestaurants,
+    likeRestaurant
 } from "./actionCreators";
 
 export const getRestaurants = () => {
@@ -78,3 +82,18 @@ export const deleteRestaurant = (id) => {
         dispatch(destroyRestaurant())
     }
 }
+
+export const getLikedRestaurantsAsync = () => {
+    return async dispatch => {
+        let likedRestaurants = await getFromLocalStorage()
+        dispatch(getLikedRestaurants(likedRestaurants))
+    }
+}
+
+export const likeRestaurantAsync = (id) => {
+    return async dispatch => {
+        let likedRestaurants = likeInLocalStorage(id)
+        dispatch(likeRestaurant(likedRestaurants))
+    }
+}
+

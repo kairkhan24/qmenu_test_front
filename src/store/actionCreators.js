@@ -29,7 +29,7 @@ export const destroyRestaurant = () => ({type: DESTROY_RESTAURANT})
 
 export const offRedirect = () => ({type:OFF_REDIRECT})
 
-export const getLikedRestaurants = () => ({type: GET_LIKED_RESTAURANTS})
+export const getLikedRestaurants = (payload) => ({type: GET_LIKED_RESTAURANTS, payload})
 export const likeRestaurant = (payload) => ({type:LIKE_RESTAURANT, payload})
 
 export const clearInputs = () => ({type: CLEAR_INPUTS})

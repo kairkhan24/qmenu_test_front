@@ -1,5 +1,3 @@
-import {getFromLocalStorage, likeInLocalStorage} from "../localStorage";
-
 const initialState = {
     restaurants: [],
     likedRestaurants: [],
@@ -59,9 +57,9 @@ export const restaurantReducer = (state = initialState, action) => {
         case OFF_REDIRECT:
             return {...state, redirect: false}
         case GET_LIKED_RESTAURANTS:
-            return {...state, likedRestaurants: getFromLocalStorage()}
+            return {...state, likedRestaurants: action.payload}
         case LIKE_RESTAURANT:
-            return {...state, likedRestaurants: likeInLocalStorage(action.payload)}
+            return {...state, likedRestaurants: action.payload}
         case CLEAR_INPUTS:
             return {...state, inputName: "", inputAverageCheck: 0, inputAverageDeliveryTime: 0}
         default:

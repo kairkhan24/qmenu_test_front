@@ -2,14 +2,11 @@ import React from "react"
 import styles from './RestaurantItem.module.css'
 import {NavLink} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {likeRestaurant} from "../../../store/actionCreators";
+import {likeRestaurantAsync} from "../../../store/asyncActions";
 
 
 const RestaurantItem = (props) => {
     const dispatch = useDispatch()
-
-
-    console.log(props.liked)
 
     return (
         <div className={styles.restaurant}>
@@ -25,7 +22,7 @@ const RestaurantItem = (props) => {
                 <NavLink to={`/restaurant/${props.id}`}>Подробно</NavLink>
             </div>
             <div>
-                {props.liked ? <button style={{backgroundColor: "red"}} onClick={() => dispatch(likeRestaurant(props.id))}>LIKE</button> : <button onClick={() => dispatch(likeRestaurant(props.id))}>LIKE</button>}
+                {props.liked ? <button style={{backgroundColor: "red"}} onClick={() => dispatch(likeRestaurantAsync(props.id))}>LIKE</button> : <button onClick={() => dispatch(likeRestaurantAsync(props.id))}>LIKE</button>}
             </div>
         </div>
     )

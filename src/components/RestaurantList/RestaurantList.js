@@ -2,8 +2,8 @@ import React, {useEffect} from "react"
 import styles from './RestaurantList.module.css'
 import RestaurantItem from "./RestaurantItem/RestaurantItem";
 import {useDispatch, useSelector, connect} from "react-redux";
-import {getRestaurants} from "../../store/asyncActions";
-import {getLikedRestaurants, offRedirect} from "../../store/actionCreators";
+import {getLikedRestaurantsAsync, getRestaurants} from "../../store/asyncActions";
+import {offRedirect} from "../../store/actionCreators";
 
 const RestaurantList = () => {
     const redirect = useSelector(state => state.redirect)
@@ -16,7 +16,7 @@ const RestaurantList = () => {
             dispatch(offRedirect())
         }
         dispatch(getRestaurants())
-        dispatch(getLikedRestaurants())
+        dispatch(getLikedRestaurantsAsync())
     }, [])
 
 
